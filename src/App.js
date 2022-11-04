@@ -1,22 +1,23 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
+  const date = new Date()
+  const [term, setTerm] = useState('')
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+    <div className='App'>
+      <header className='App-header'>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          {date.toDateString()}
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <p>
+          {date.getHours() < 17
+            ? 'Daytime'
+            : 'Night'
+          }
+        </p>
+        <input type='text' name='search' placeholder='Search' onChange={e => setTerm(e.target.value)}></input>
+        <button onClick={() => console.log(term)}>Search</button>
       </header>
     </div>
   );
