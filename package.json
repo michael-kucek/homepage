@@ -37,5 +37,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "http://michael-kucek.github.io/homepage"
+  "homepage": "http://michael-kucek.github.io/homepage",
+  "devDependencies": {
+    "gh-pages": "^4.0.0"
+  }
 }
