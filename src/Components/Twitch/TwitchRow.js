@@ -1,7 +1,8 @@
-const divMargin = { margin: '0.25rem' }
+import { divMargin, flexParent } from "../Shared/Styles"
+
 const sty = {
     section: {
-        display: 'flex',
+        ...flexParent,
         padding: '1rem',
         width: 600,
         height: 100,
@@ -34,7 +35,7 @@ const getThumbnailUrl = (thumbnail_url, thumbnailSize) => {
     return thumbnail_url.replace('{width}', thumbnailSize * 16).replace('{height}', thumbnailSize * 9)
 }
 
-export default function TwitchChannel({ user_name, game_name, thumbnail_url, title, viewer_count, started_at }) {
+export default function TwitchRow({ user_name, game_name, thumbnail_url, title, viewer_count, started_at }) {
     const getLiveTime = () => {
         const then = new Date(started_at)
         const now = new Date()
