@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 const divMargin = { margin: '0.25rem' }
 const sty = {
     section: {
@@ -45,11 +43,11 @@ export default function TwitchChannel({ user_name, game_name, thumbnail_url, tit
     }
     return (
         <section style={sty.section}>
-            <img src={getThumbnailUrl(thumbnail_url, 15)}></img>
+            <img src={getThumbnailUrl(thumbnail_url, 15)} alt={`${user_name} thumbnail`}></img>
             <div>
                 <div style={sty.name}>
                     <a href={`https://twitch.tv/${user_name}`}>{user_name}</a> {'   '}
-                    <a href={`https://twitch.tv/${user_name}`} target='_blank'>❏</a>
+                    <a href={`https://twitch.tv/${user_name}`} target='_blank' rel="noreferrer">❏</a>
                     </div>
                 <div style={sty.title}>{title}</div>
                 <div style={sty.game}>{game_name}</div>
