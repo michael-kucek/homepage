@@ -1,18 +1,37 @@
+#twitch {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .shadow {
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
 }
 
 .twitch-div {
     position: relative;
-    margin: 1rem;
-    width: calc(20px * 16);
-    height: calc(20px * 9);
+    flex: 2 1 auto;
+    margin: 0.5rem;
+
+/* 
+    max-width: 350px;
+    min-width: 200px; */
+    width: 300px;
+    aspect-ratio: calc(16/9);
+    /* width: calc(20px * 16); */
+    /* height: calc(20px * 9); */
 }
 
 .twitch-thumbnail {
     position: absolute;
-    width: calc(20px * 16);
-    height: calc(20px * 9);
+    width: 100%;
+    height: 100%;
+    /* max-width: calc(22px * 16);
+    min-width: calc(18px * 16);
+    aspect-ratio: calc(16/ 9); */
+
+    /* width: calc(20px * 16); */
+    /* height: calc(20px * 9); */
     border-radius: 6px;
 }
 
@@ -21,7 +40,7 @@
     justify-content: space-between;
     align-items: center;
     position: absolute;
-    font-size: calc(8px + 1vmin);
+    font-size: calc(10px + 1vmin);
     height: 30%;
     width: 100%;
     box-sizing: border-box;
@@ -38,13 +57,12 @@
 }
 
 .twitch-game-thumbnail {
-    width: calc(22px * 3);
-    height: calc(22px * 4);
+    width: 40%;
+    aspect-ratio: calc(3/4);
     border-end-start-radius: 6px;
     align-self: end;
     margin-left: -0.5rem;
     margin-bottom: -0.5rem;
-
 }
 
 .twitch-channel-name {
@@ -53,7 +71,7 @@
 }
 
 .twitch-stream-info {
-    font-size: calc(4px + 1vmin);
+    font-size: calc(6px + 1vmin);
     padding: 0px;
     align-self: center;
     text-align: right;

@@ -26,7 +26,7 @@ export default function BookmarkHolder() {
     const bookmarkList = bookmarkData.map(b => <BookmarkRow key={b.url} {...b} />)
 
     return (
-        <div>
+        <div id='bookmarks'>
             {bookmarkList}
         </div>
     )

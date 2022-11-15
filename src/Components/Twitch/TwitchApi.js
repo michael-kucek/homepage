@@ -1,4 +1,4 @@
-const channels = ['GiantBomb', 'Nextlander', 'iOki', 'a_seagull', 'chainbrain', 'Smight', 'IKeepItTaco', 'Flats', 'Quill18', 'Werster', 'Draskyl']
+const channels = ['GiantBomb', 'Nextlander', 'iOki', 'a_seagull', 'chainbrain', 'Smight', 'IKeepItTaco', 'Flats', 'Quill18', 'Werster', 'Draskyl', 'Snip3down', 'Artosis', 'jorbs', 'PurgeGamers']
 
 const headers = { 'Authorization': `Bearer ${process.env.REACT_APP_TWITCH_AUTH}`, 'Client-Id': process.env.REACT_APP_TWITCH_ID }
 const method = 'GET'

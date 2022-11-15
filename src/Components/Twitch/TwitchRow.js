@@ -1,4 +1,3 @@
-import './TwitchStyles.css'
 
 const getThumbnailUrl = (thumbnailUrl, thumbnailSize = 100) => {
     return thumbnailUrl.replace('{width}', thumbnailSize * 16).replace('{height}', thumbnailSize * 9)

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import Spinner from "../Shared/Spinner";
 import { fetchChannelInfo } from "./TwitchApi"
 import TwitchRow from "./TwitchRow";
-// import TwitchChannel from "./TwitchChannel"
+import './TwitchStyles.css'
 
 export default function TwitchHolder() {
     const [channelData, setChannelData] = useState([])

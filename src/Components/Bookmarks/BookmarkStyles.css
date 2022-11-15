@@ -1,18 +1,33 @@
+#bookmarks {
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
 .shadow {
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12);
 }
 
 .bookmark-div {
     position: relative;
-    margin: 1rem;
-    width: calc(20px * 16);
-    height: calc(20px * 9 / 2 - 0.5rem);
+    margin: 0.5rem;
+    flex: 1 0 auto;
+    
+    width: calc(300px);
+    /* not quite working for two columns */
+    height: calc((300px - 2rem) / (16/9) );
+    /* max-height: calc(200px / 16 * 9); */
+    /* aspect-ratio: calc(16/9 * 2); */
+    box-sizing: content-box;
+    /* height: calc(300px * 9 / 16); */
+    /* height: calc(20px * 9 / 2 - 0.25rem); */
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bolder;
     font-size: x-large;
     border-radius: 6px;
+    
 }
 
 .bookmark-anchor {
