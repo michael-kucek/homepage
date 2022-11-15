@@ -6,18 +6,23 @@ import TwitchRow from "./TwitchRow";
 
 export default function TwitchHolder() {
     const [channelData, setChannelData] = useState([])
+    const [gameData, setGameData] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [sortKey] = useState('viewer_count')
 
     // https://beta.reactjs.org/apis/react/useEffect#
     useEffect(() => {
         // setup code
         let ignore = false;
         setChannelData([])
+        setGameData([])
         setIsLoading(true)
         fetchChannelInfo().then(result => {
             if (!ignore) {
                 console.log(result)
-                setChannelData(result)
+                setChannelData(result.channelData)
+                setGameData(result.gameData)
+                console.log('loading false')
                 setIsLoading(false)
             }
         })
@@ -28,10 +33,18 @@ export default function TwitchHolder() {
         // dependencies in this component
     }, [])
 
-    const channelList = channelData.map(c => <TwitchRow key={c.user_id} {...c} ></TwitchRow>)
+    // TODO: handle case insensitive for strings and ints for viewers
+    if (sortKey) channelData.sort((a, b) => b[sortKey] - a[sortKey])
+
+    const channelList = channelData.map(c =>
+        <TwitchRow
+            key={c.user_id} {...c}
+            game_thumbnail_url={gameData[c.game_id].box_art_url}
+        />
+    )
     return (
-        <div>
-            {isLoading ? <Spinner/> : channelList}
+        <div id="twitch">
+            {isLoading ? <Spinner /> : channelList}
         </div>
     )
 }
