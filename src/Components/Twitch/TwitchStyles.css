@@ -17,6 +17,7 @@
     max-width: 350px;
     min-width: 200px; */
     width: 300px;
+    max-width: calc(50% - 1rem);
     aspect-ratio: calc(16/9);
     /* width: calc(20px * 16); */
     /* height: calc(20px * 9); */
