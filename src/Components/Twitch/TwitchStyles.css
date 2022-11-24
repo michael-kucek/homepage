@@ -2,6 +2,7 @@
     width: 50%;
     display: flex;
     flex-wrap: wrap;
+    align-content: flex-start;
 }
 
 .shadow {
@@ -16,8 +17,10 @@
 /* 
     max-width: 350px;
     min-width: 200px; */
-    width: 300px;
-    max-width: calc(50% - 1rem);
+    width: 280px;
+    max-height: calc(450px / 16 * 9);
+    /* max-height: 240px; */
+    /* max-width: calc(50% - 1rem); */
     aspect-ratio: calc(16/9);
     /* width: calc(20px * 16); */
     /* height: calc(20px * 9); */
@@ -25,8 +28,11 @@
 
 .twitch-thumbnail {
     position: absolute;
+    object-fit: cover;
     width: 100%;
     height: 100%;
+    min-height: 100px !important;
+
     /* max-width: calc(22px * 16);
     min-width: calc(18px * 16);
     aspect-ratio: calc(16/ 9); */
@@ -42,7 +48,7 @@
     align-items: center;
     position: absolute;
     font-size: calc(10px + 1vmin);
-    height: 30%;
+    height: 40%;
     width: 100%;
     box-sizing: border-box;
     padding: 0.5rem;
@@ -58,7 +64,9 @@
 }
 
 .twitch-game-thumbnail {
-    width: 40%;
+    object-fit: cover;
+
+    width: 80px;
     aspect-ratio: calc(3/4);
     border-end-start-radius: 6px;
     align-self: end;
@@ -73,7 +81,8 @@
 
 .twitch-stream-info {
     font-size: calc(6px + 1vmin);
-    padding: 0px;
+    margin: 2px;
+    padding: 2px;
     align-self: center;
     text-align: right;
 }

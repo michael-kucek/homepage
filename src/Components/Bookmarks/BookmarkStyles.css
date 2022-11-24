@@ -15,9 +15,12 @@
     margin: 0.5rem;
     flex: 1 0 auto;
     
-    width: calc(300px);
-    /* not quite working for two columns */
-    height: calc((300px - 2rem) / (16/9) );
+    width: 280px;
+    max-height: calc(450px / 16 * 9);
+    aspect-ratio: calc(16/9);
+
+        /* not quite working for two columns */
+    /* height: calc((300px - 2rem) / (16/9) ); */
     /* max-height: calc(200px / 16 * 9); */
     /* aspect-ratio: calc(16/9 * 2); */
     box-sizing: content-box;

@@ -20,11 +20,12 @@ export default function TwitchRow({ user_name, game_name, thumbnail_url, title, 
             <img className='twitch-thumbnail' src={getThumbnailUrl(thumbnail_url)} alt={`${user_name} thumbnail`}></img>
             <div className='twitch-info'>
                 <img className='twitch-game-thumbnail' src={getGameThumbnailUrl(game_thumbnail_url)} alt={`${user_name} thumbnail`}></img>
+                
+                <div className='twitch-stream-info'>
                 <div className='twitch-channel-name'>
                     <a href={`https://twitch.tv/${user_name}`}>{user_name}</a> {'   '}
                     <a href={`https://twitch.tv/${user_name}`} target='_blank' rel="noreferrer">❏</a>
                 </div>
-                <div className='twitch-stream-info'>
                     <div>
                         {viewer_count} viewers
                     </div>
