@@ -1,0 +1,39 @@
+#searchdiv {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+#searchbox {
+    background-color: rgb(64, 69, 71);
+    border-width: 0px;
+    border-radius: 6px;
+    color: rgb(215, 215, 215);
+    width: 80%;
+    height: 20px;
+    padding: 8px;
+}
+
+#searchbox:focus {
+    outline-style: none;
+    border-color: transparent;
+    box-shadow: rgb(215, 215, 215) 0px 0px 0px 1px inset;
+}
+
+#searchbutton {
+    margin-left: -80px;
+    color: rgb(215, 215, 215);
+    border-color: rgb(215, 215, 215) !important;
+    /* background-color: rgb(64, 69, 71); */
+    height: 20px;
+    background-color: none;
+    border-radius: 6px;
+    border-width: 1px;
+    padding: 8px;
+    cursor:pointer;
+}
+
+#searchanchor {
+    color: inherit;
+    text-decoration: none;
+}

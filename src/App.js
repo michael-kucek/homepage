@@ -1,6 +1,6 @@
 import './App.css';
 import MainLayout from './Components/Layout/MainLayout';
-import Search from './Components/Search';
+import Search from './Components/Search/Search';
 
 function App() {
   const date = new Date()
