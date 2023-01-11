@@ -6,10 +6,13 @@ const method = 'GET'
 export const fetchChannelInfo = async () => {
     // getUserId('GiantBomb')
     const q = 'user_login='
-    const queryParams = q + channels.join(`&${q}`)
+    const queryParams = q + channels.join(`&${q}`) + '&origin=http://localhost:3000/'
     const url = `https://api.twitch.tv/helix/streams?${queryParams}`
 
     const response = await fetch(url, { method, headers })
+    if (response.status === 401) {
+        await refreshToken()
+    }
     const channelData = await response.json()
     const gameIds = channelData.data.map(ch => ch.game_id)
     const gameDataArray = await fetchGameBoxArtUrl(gameIds)
@@ -17,8 +20,6 @@ export const fetchChannelInfo = async () => {
     gameDataArray.forEach(g => {
         gameData[g.id] = g
     })
-    console.log(gameData)
-
     return { channelData: channelData.data, gameData } || { channelData: [], gameData: [] }
 }
 
@@ -30,6 +31,13 @@ export const fetchGameBoxArtUrl = async (ids) => {
     const response = await fetch(url, { method, headers })
     const data = await response.json()
     return data.data || []
+}
+
+const refreshToken = async () => {
+    fetch('https://id.twitch.tv/oauth2/token', {
+        method: 'POST', headers:
+            { client_id: process.env.REACT_APP_TWITCH_ID, client_secret: process.env.REACT_APP_TWITCH_AUTH, grant_type: 'refresh_token' }
+    })
 }
 
 

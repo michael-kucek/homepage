@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react"
 import Spinner from "../Shared/Spinner";
-import { fetchChannelInfo } from "./TwitchApi"
-import TwitchRow from "./TwitchRow";
-import './TwitchStyles.css'
+import { fetchChannelInfo } from "./YoutubeApi"
+import YoutubeRow from "./YoutubeRow";
+import './YoutubeStyles.css'
 
-export default function TwitchHolder() {
+export default function YoutubeHolder() {
     const [channelData, setChannelData] = useState([])
     const [gameData, setGameData] = useState([])
     const [isLoading, setIsLoading] = useState(true)
@@ -19,8 +19,7 @@ export default function TwitchHolder() {
         setIsLoading(true)
         fetchChannelInfo().then(result => {
             if (!ignore) {
-                setChannelData(result.channelData)
-                setGameData(result.gameData)
+                // setChannelData(result.channelData)
                 setIsLoading(false)
             }
         })
@@ -35,13 +34,13 @@ export default function TwitchHolder() {
     if (sortKey) channelData.sort((a, b) => b[sortKey] - a[sortKey])
 
     const channelList = channelData.map(c =>
-        <TwitchRow
+        <YoutubeRow
             key={c.user_id} {...c}
             game_thumbnail_url={gameData[c.game_id].box_art_url}
         />
     )
     return (
-        <div id="twitch">
+        <div id="youtube">
             {isLoading ? <Spinner /> : channelList}
         </div>
     )

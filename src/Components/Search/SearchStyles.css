@@ -5,7 +5,9 @@
 }
 
 #searchbox {
-    background-color: rgb(64, 69, 71);
+    /* background-color: rgb(64, 69, 71); */
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 1.6px 3.6px, rgba(0, 0, 0, 0.11) 0px 0px 2.9px;
+    background-color: rgb(24, 26, 27);
     border-width: 0px;
     border-radius: 6px;
     color: rgb(215, 215, 215);
